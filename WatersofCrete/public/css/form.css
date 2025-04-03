@@ -1,0 +1,312 @@
+/* Basic styling for the form */
+#waters-form {
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center !important;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Flexbox layout for form fields */
+#waters-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Style for each field group */
+.woc-field-group {
+    flex: 1 1 22%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;  
+}
+
+/* Style for text inputs */
+.woc-field-group input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for select inputs */
+#coast,#year,#month,#municipal,#wave,#clean,#description {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for date inputs */
+.woc-field-group input[type="date"] {
+    width: 18px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Styling for date boxes */
+.woc-date {
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.woc-date-box {
+    border: 1px solid #ccc; 
+    padding: 5px 10px; 
+    margin-right: 10px; 
+    border-radius: 4px 0 0 4px;
+    background-color: #f9f9f9; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+#formatted_date_display {
+    margin-right: 10px; 
+}
+
+/* Style the labels */
+.woc-field-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Style the submit button */
+#waters-form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #0073aa;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#waters-form button[type="submit"]:hover {
+    background-color: #005a87;
+}
+
+/* Dropdown container styling */
+.woc-dropdown-container {
+    flex: 1 1 48%; 
+    margin-bottom: 20px;
+}
+
+/* Info Button */
+.woc-info-container {
+    position: relative;
+    display: inline-block;
+}
+
+.woc-info-button {
+    width: 40px; 
+    height: 40px; 
+    font-size: 22px; 
+    border: none;
+    border-radius: 50%; 
+    background-color: #3b88c3; 
+    color: white; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s; 
+}
+
+.woc-info-button:hover {
+    background-color: #0056b3; 
+}
+
+.woc-date_rules {
+    visibility: hidden;
+    max-width: 2000px; 
+    background-color: #9c9c9c;
+    color: #fff;
+    text-align: left; 
+    border-radius: 5px;
+    padding: 10px; 
+    position: absolute;
+    z-index: 1;
+    left: 110%; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.woc-info-container:hover .woc-date_rules {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Button container styling */
+.woc-button-container {
+    display: flex;
+    gap: 10px; 
+    align-items: center; 
+    padding: 10px; 
+}
+
+/* General button styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#item-container{
+    width:60%;
+}
+/* Dropdown Values on form*/
+/* Display selected signers as a vertical list */
+#item-selected {
+    display: block;
+    
+}
+
+.item-tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px; /* Space between each selected item */
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 0.85em; /* Slightly smaller font */
+    line-height: 1.2em;
+    width: 80%; /* Adjust width to be smaller */
+    max-width: 230px; /* Set a max width */
+}
+
+.item-name {
+    white-space: nowrap; /* Prevent long names from breaking lines */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if the name is too long */
+}
+
+.item-tag .remove-item {
+    margin-left: 10px;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Dropdown styling */
+.item-dropdown {
+    width: 100%; /* Full width dropdown */
+    margin-top: 10px; /* Space between the dropdown and selected items */
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+select option {
+    color: black;
+}
+
+/* Style for the selected value in the dropdown */
+select option[selected] {
+    color: grey;
+}
+
+/* Style the <select> itself when an option is selected */
+select.custom-dropdown {
+    color: black; /* Default color for the dropdown */
+}
+
+/* When an option is selected, change the color to grey */
+select.custom-dropdown.grey-selected {
+    color: grey;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    #waters-form {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    #waters-fields {
+        flex-direction: column;
+    }
+
+    .woc-field-group {
+        flex: 1 1 100%;
+        margin-bottom: 10px;
+    }
+
+    .woc-field-group input[type="text"], #unit, #signer, #type, #tag {
+        width: 285px;
+    }
+
+    .woc-date {
+        display: flex;
+        align-items: center;
+        margin-top: -20px;
+    }
+
+    .woc-date-box {
+        border: 1px solid #ccc; 
+        padding: 5px 10px; 
+        margin-right: 10px; 
+        border-radius: 4px 0 0 4px;
+        background-color: #f9f9f9; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #waters-form button[type="submit"] {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .woc-info-button {
+        width: 100%;
+    }
+
+    .woc-dropdown-container {
+        width: 100%;
+    }
+
+    .woc-button-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+}
+
+/* Media Query for Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #waters-form {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    #waters-fields {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .woc-field-group {
+        flex: 1 1 45%;
+        margin-bottom: 20px;
+    }
+
+    .woc-field-group input[type="text"], #unit, #signer, #type, #tag {
+        width: 285px;
+    }
+
+    .woc-date {
+        margin-top: 0; /* Adjust for alignment */
+    }
+
+    .woc-date-box {
+        margin-right: 10px; 
+    }
+}

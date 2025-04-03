@@ -1,0 +1,213 @@
+/* Ensure the main container adapts well */
+#woc-plugin-container {
+    max-width: 100%;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header adjustments */
+.woc-plugin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* Adjust the logo */
+.woc-plugin-container .woc-plugin-header .woc-logo-frame {
+    max-width: 200px;
+    text-align: left;
+}
+
+/* Center title */
+.woc-column-frame {
+    flex: 1;
+    text-align: center;
+    margin-left: 10px;
+}
+
+/* Title styling */
+.woc-h1-class {
+    font-size: 36px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Pagination fixes */
+.woc-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.woc-pagination-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.woc-pagination-list li {
+    margin: 0 2px;
+}
+
+.woc-page-link {
+    display: block;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #0073aa;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.woc-page-link:hover {
+    background-color: #ddd;
+}
+
+.woc-page-link.disabled {
+    color: #999;
+    pointer-events: none;
+    border-color: #ddd;
+    background-color: #f4f4f4;
+}
+
+/* Adjust controls */
+.woc-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Rows per page */
+.woc-rows-selector {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Dropdown styles */
+select#rows_per_page_D {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+select#rows_per_page_D:hover {
+    border-color: #0073aa;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* Ensure auto table layout for flexibility */
+}
+
+/* Fix table header & cells */
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Increase padding for readability */
+    text-align: center;
+    word-wrap: break-word;
+    white-space: normal; /* Prevent content from being cut */
+}
+
+/* Table headers */
+th {
+    background-color: black;
+    color: white;
+}
+
+/* Fix link styling inside tables */
+td a {
+    color: #0073aa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure responsiveness */
+.woc-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.woc-table-container table {
+    min-width: 100%;
+}
+
+/* Responsive fixes for different screen sizes */
+
+/* 📱 Mobile view (max 600px) */
+@media (max-width: 600px) {
+    .woc-plugin-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .woc-column-frame {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .woc-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .woc-pagination {
+        margin-top: 10px;
+    }
+
+    .woc-page-link {
+        padding: 3px 5px;
+        font-size: 12px;
+    }
+}
+
+/* 📊 Tablet view (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    th, td {
+        font-size: 14px;
+    }
+
+    .woc-page-link {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+
+/* 🖥 Desktop view (1025px and up) */
+@media (min-width: 1025px) {
+    th, td {
+        font-size: 16px;
+    }
+
+    .woc-page-link {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .woc-controls {
+        margin-top: 30px;
+    }
+
+    .woc-pagination {
+        margin-top: 30px;
+    }
+}
